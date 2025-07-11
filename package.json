@@ -1,0 +1,29 @@
+{
+  "name": "cypress-cucumber",
+  "version": "1.0.0",
+  "description": "Repositório com todo material do curso de Automação Front-end e Back-end utilizando Cypress + Cucumber.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeloFDiasGTech/autFrontBackCypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeloFDiasGTech/autFrontBackCypress/issues"
+  },
+  "homepage": "https://github.com/AngeloFDiasGTech/autFrontBackCypress#readme",
+  "devDependencies": {
+    "cypress": "^14.5.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "step_definitions": "cypress/e2e/steps"
+  }
+}
