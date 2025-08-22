@@ -10,7 +10,16 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('DataRandomica', () => { 
+    const start = new Date(2000, 0, 1)
+    const end = new Date(2030, 11, 31)
+    const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+    const mm = String(randomDate.getMonth() + 1).padStart(2, '0')
+    const dd = String(randomDate.getDate()).padStart(2, '0')
+    const yyyy = randomDate.getFullYear()
+    return `${mm}-${dd}-${yyyy}`
+})
+
 //
 //
 // -- This is a child command --
