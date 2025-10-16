@@ -1,3 +1,4 @@
 {
-    "baseUrl": "http://127.0.0.1:5502/SistemadeAprovacaodeCredito/"
+    "baseUrl": "http://localhost:8080/api/items",
+    "browserUrl": "http://127.0.0.1:5500/"
 }

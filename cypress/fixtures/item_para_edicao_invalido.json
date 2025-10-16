@@ -1,0 +1,4 @@
+{
+  "name": "",
+  "description": "Este item deve falhar na validação do update pois o nome está em branco."
+}

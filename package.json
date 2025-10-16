@@ -18,12 +18,12 @@
   },
   "homepage": "https://github.com/AngeloFDiasGTech/autFrontBackCypress#readme",
   "devDependencies": {
-    "cypress": "^14.5.1",
+    "cypress": "14.5.1",
     "cypress-cucumber-preprocessor": "^4.3.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
-    "step_definitions": "cypress/e2e/steps"
+    "step_definitions": "cypress/support/steps_definitions"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0"

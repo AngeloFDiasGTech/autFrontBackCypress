@@ -1,0 +1,5 @@
+{
+    "name": "Item 1",
+    "description": "Descrição do item 1 coletado da API",
+    "url": "http://127.0.0.1:5500/1"
+}
