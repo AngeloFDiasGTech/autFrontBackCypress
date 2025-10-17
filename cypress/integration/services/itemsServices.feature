@@ -1,9 +1,8 @@
 #language: pt
 
-@paymentsServicesV1
+@itemsServicesV1
 @regressionTest
-@payinCheckoutSwagger
-Funcionalidade: API V1 - PP3 Checkout
+Funcionalidade: API V1 - Items
 
     Como usuário da API de Itens
     Quero manipular os dados via endpoints
@@ -55,90 +54,3 @@ Esquema do Cenário: Realizar um fluxo CRUD completo para um item
     Exemplos:
       | fixture_criacao           | fixture_edicao         |
       | 'novo_item_valido.json'   | 'item_para_edicao.json'|
-
-# # @ignore
-#     Scenario Outline: [POST] CRIAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBody>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-#         And valido se o Status do checkout está igual ao <status_checkout>
-
-#         Examples:
-#             | FormaPagamento | requestBody                             | status_checkout    | status_code |
-#             | 'pix'          | 'requestBody_create_pix_transaction'    | 'CREATED'          | '204'       |
-#             | 'paypal'       | 'requestBody_create_paypal_transaction' | 'CREATED'          | '204'       |
-
-# # @ignore
-#     Scenario Outline: [POST] EXPIRAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de EXPIRAR a transação com <requestBodyExpire>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-
-#         Examples:
-#             | FormaPagamento | requestBodyCreate                       | requestBodyExpire                  | status_checkout    | status_code |
-#             | 'pix'          | 'requestBody_create_pix_transaction'    | 'requestBody_expire_transaction'   | 'EXPIRED'          | '204'       |
-#             | 'paypal'       | 'requestBody_create_paypal_transaction' | 'requestBody_expire_transaction'   | 'EXPIRED'          | '204'       |
-
-# # @ignore
-#     Scenario Outline: [POST] INICIALIZAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de INICIALIZAR transação com os dados <requestBodyInitalize>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-#         And valido se o Status do checkout está igual ao <status_checkout>
-
-#         Examples:
-#             | FormaPagamento | requestBodyCreate                        | requestBodyInitalize                          | status_checkout    | status_code |
-#             | 'pix'          | 'requestBody_create_pix_transaction'     |'requestBody_initialize_pix_transaction'       | 'INITIALIZED'      | '204'       |
-#             | 'paypal'       | 'requestBody_create_paypal_transaction'  |'requestBody_initialize_paypal_transaction'    | 'INITIALIZED'      | '204'       |
-
-# # @ignore
-#         Scenario Outline: [POST] ABANDONAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de INICIALIZAR transação com os dados <requestBodyInitalize>
-#         And executo a requisição POST de ABANDONAR a transação com <requestBodyAbandon>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-
-#         Examples:
-#             | FormaPagamento    | requestBodyCreate                         | requestBodyInitalize                          | requestBodyAbandon                      | status_checkout  | status_code |
-#             | 'pix'             | 'requestBody_create_pix_transaction'      |'requestBody_initialize_pix_transaction'       | 'requestBody_abandon_transaction'       | 'ABANDONED'      | '204'       |
-#             | 'paypal'          | 'requestBody_create_paypal_transaction'   |'requestBody_initialize_paypal_transaction'    | 'requestBody_abandon_transaction'       | 'ABANDONED'      | '204'       |    
-
-# # @ignore
-#     Scenario Outline: [POST] COLETAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de INICIALIZAR transação com os dados <requestBodyInitalize>
-#         And executo a requisição POST de COLETAR transação com os dados <requestBodyCollect>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-#         And valido se o Status do checkout está igual ao <status_checkout>
-
-#         Examples:
-#             | FormaPagamento | requestBodyCreate                        | requestBodyInitalize                          | requestBodyCollect                            | status_checkout  | status_code |
-#             | 'pix'          | 'requestBody_create_pix_transaction'     |'requestBody_initialize_pix_transaction'       | 'requestBody_collect_pix_transaction'         | 'COLLECTED'      | '204'       |
-#             | 'paypal'       | 'requestBody_create_paypal_transaction'  |'requestBody_initialize_paypal_transaction'    | 'requestBody_collect_paypal_transaction'      | 'COLLECTED'      | '204'       |
-
-# # @ignore
-#     Scenario Outline: [POST] COMPLETAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de INICIALIZAR transação com os dados <requestBodyInitalize>
-#         And executo a requisição POST de COLETAR transação com os dados <requestBodyCollect>
-#         And executo a requisição POST de COMPLETAR a transação com <requestBodyComplete>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-#         And valido se o Status do checkout está igual ao <status_checkout>
-
-#         Examples:
-#             | FormaPagamento | requestBodyCreate                        | requestBodyInitalize                          | requestBodyCollect                            | requestBodyComplete                                | status_checkout  | status_code |
-#             | 'pix'          | 'requestBody_create_pix_transaction'     |'requestBody_initialize_pix_transaction'       | 'requestBody_collect_pix_transaction'         | 'requestBody_complete_pix_transaction'             | 'COMPLETED'      | '204'       |
-#             | 'paypal'       | 'requestBody_create_paypal_transaction'  |'requestBody_initialize_paypal_transaction'    | 'requestBody_collect_paypal_transaction'      | 'requestBody_complete_paypal_transaction'          | 'COMPLETED'      | '204'       |
-        
-# # @ignore
-#         Scenario Outline: [POST] CANCELAR uma transação checkout
-#         When executo a requisição POST de CRIAR transação com os dados do <requestBodyCreate>
-#         And executo a requisição POST de INICIALIZAR transação com os dados <requestBodyInitalize>
-#         And executo a requisição POST de COLETAR transação com os dados <requestBodyCollect>
-#         And executo a requisição POST de CANCELAR a transação com <requestBodyCancel>
-#         Then valido se a requisição retornará o statusCode igual a <status_code>
-#         And valido se o Status do checkout está igual ao <status_checkout>
-
-#         Examples:
-#             | FormaPagamento    | requestBodyCreate                         | requestBodyInitalize                          | requestBodyCollect                        | requestBodyCancel                      | status_checkout  | status_code |
-#             | 'pix'             | 'requestBody_create_pix_transaction'      |'requestBody_initialize_pix_transaction'       | 'requestBody_collect_pix_transaction'     | 'requestBody_cancel_transaction'       | 'CANCELED'       | '204'       |
-#             | 'paypal'          | 'requestBody_create_paypal_transaction'   |'requestBody_initialize_paypal_transaction'    | 'requestBody_collect_paypal_transaction'  | 'requestBody_cancel_transaction'       | 'CANCELED'       | '204'       |

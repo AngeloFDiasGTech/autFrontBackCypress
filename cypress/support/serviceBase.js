@@ -17,27 +17,19 @@ class ServiceBase {
         })
     }
 
-    // from_post_request_update_field(requestBody, url, field) {
-    //     cy.atualizarCampoJsonComNovoUUID(requestBody + '.json', field).then((updatedFixture) => {
-    //         cy.log(`CheckoutId atual: ${updatedFixture.checkoutId}`);
-    //         UUIDAtual = updatedFixture.checkoutId;
-    //         this.form_request_cy("POST", url, updatedFixture);
-    //     })
-    // }
-
 
     from_post_request_update_field_novo_uuid(requestBody, url, field) {
         cy.atualizarCampoJsonComNovoUUID(requestBody + '.json', field).then((updatedFixture) => {
-            cy.log(`CheckoutId atual: ${updatedFixture[field]}`);
-            console.log(`CheckoutId atual: ${updatedFixture[field]}`);
+            cy.log(`Id atual: ${updatedFixture[field]}`);
+            console.log(`Id atual: ${updatedFixture[field]}`);
             UUIDAtual = updatedFixture[field];
             this.form_request_cy("POST", url, updatedFixture);
         })
     }
 
-    from_post_request_last_checkoutid(requestBody, url) {
-        cy.atualizarCampoJsonComDados(requestBody + '.json', 'checkoutId', UUIDAtual).then((updatedFixture) => {
-            cy.log(`CheckoutId atual: ${updatedFixture.checkoutId}`);
+    from_post_request_last_id(requestBody, url) {
+        cy.atualizarCampoJsonComDados(requestBody + '.json', 'Id', UUIDAtual).then((updatedFixture) => {
+            cy.log(`Id atual: ${updatedFixture.Id}`);
             this.form_request_cy("POST", url, updatedFixture);
         })
     }
@@ -50,7 +42,7 @@ class ServiceBase {
         })
     }
 
-    from_post_request_new_checkout_v3(requestBody, url, formaPagamento, currency, unitPrice, country) {
+    from_post_request_new_v3(requestBody, url, formaPagamento, currency, unitPrice, country) {
 
         cy.atualizarCamposDoJsonV3(requestBody, {
             newCurrency: currency,
@@ -103,18 +95,18 @@ class ServiceBase {
         })
     }
 
-    visitBrowserUrlCheckoutAtual() {
-        cy.visitBrowserUrlCheckout(UUIDAtual);
+    visitBrowserUrlAtual() {
+        cy.visitBrowserUrl(UUIDAtual);
     }
 
-    visitBrowserUrlCheckoutV3() {
+    visitBrowserUrlV3() {
         cy.log(this.returnResponseUrlV3())
         cy.visit(this.returnResponseUrlV3());
     }
 
-    validateBrowserUrlCheckoutRedirect(requestBody) {
+    validateBrowserUrlRedirect(requestBody) {
 
-        cy.visitBrowserUrlCheckout(UUIDAtual + "?collected=true").then((fullUrl) => {
+        cy.visitBrowserUrl(UUIDAtual + "?collected=true").then((fullUrl) => {
 
             cy.fixture(requestBody + '.json').then((data) => {
                 const expectedRedirectUrl = data.transaction.payment.redirect;
@@ -135,7 +127,7 @@ class ServiceBase {
         return response.status
     }
 
-    returnStatusCheckout() {
+    returnStatus() {
         return response.body.status
     }
 

@@ -33,7 +33,7 @@ Cypress.Commands.add('DataRandomica', () => {
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('visitBrowserUrlCheckout', (data) => {
+Cypress.Commands.add('visitBrowserUrl', (data) => {
     cy.log(`Browser URL: ${Cypress.env('browserUrl')}`);
     const fullUrl = `${Cypress.env('browserUrl')}/${data}`;
     cy.log("URL completa:" + fullUrl)

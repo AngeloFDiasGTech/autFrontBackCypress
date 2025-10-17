@@ -1,9 +1,8 @@
 #language: pt
 
-@paymentsServicesV1
+@itemsServicesCRUDV1
 @regressionTest
-@payinCheckoutSwagger
-Funcionalidade: API V1 - PP3 Checkout
+Funcionalidade: API V1 - Items CRUD
 
     Como usuário da API de Itens
     Quero manipular os dados via endpoints
